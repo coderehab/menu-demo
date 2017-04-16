@@ -1,0 +1,48 @@
+@import "node_modules/advanced-menus/scss/menu";
+@import "node_modules/bootstrap/scss/bootstrap";
+
+$menu-config: (
+aside-left: (
+min:0px,
+max:768px,
+autohide: 400px
+),
+plain-horizontal: (min:768px)
+) !default;
+
+@include menu( "#main-menu", $menu-config);
+
+body{
+  background: #ddd;
+}
+
+.container-fluid {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.scroll-disabled{
+  overflow: hidden;
+}
+
+main{
+  @include menu-breakpoint('aside-right'){
+    padding-right:235px;
+  }
+  .container-fluid{
+    background: #f5f5f5;
+    padding-top:5%;
+    padding-bottom:5%;
+  }
+}
+
+footer#buttons{
+  position: fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background: #ddd;
+}
+
+@import "menu";
