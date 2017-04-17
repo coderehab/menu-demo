@@ -1,0 +1,33 @@
+@include menu-breakpoint("main-menu", 'aside-left'){
+  main{
+    transition: all 0.3s;
+  }
+  body.menu-open main{
+    filter: blur(7px);
+  }
+  header{
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index: 3000;
+  }
+  body{
+    padding-top:70px;
+  }
+  #main-menu{
+    top:72px;
+  }
+}
+
+@include menu-breakpoint("main-menu", 'aside-left'){
+  header .menu-toggle-button{
+    display: block;
+  }
+}
+
+@include menu-breakpoint("main-menu", 'plain-horizontal'){
+  #main-menu{
+    margin-left: auto;
+  }
+}

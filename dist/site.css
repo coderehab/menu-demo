@@ -1,3 +1,11 @@
+#main-menu, #page-menu, .some-menu {
+  z-index: 3001; }
+  #main-menu ul, #page-menu ul, .some-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1rem; }
+
 @media screen and (min-width: 0px) and (max-width: 750px) {
   #main-menu {
     transition: all 0.3s;
@@ -9,11 +17,6 @@
     background: #fff;
     border: 1px solid #e5e5e5;
     overflow: auto; }
-    #main-menu ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      font-size: 1rem; }
     #main-menu li {
       transition: all 0.3s; }
       #main-menu li a {
@@ -41,7 +44,7 @@
 @media screen and (max-width: 750px) {
   #main-menu {
     transform: translateX(-100%);
-    opacity: 0; } }
+    opacity: 1; } }
 
 @media screen and (min-width: 750px) and (max-width: 1024px) {
   #main-menu {
@@ -54,11 +57,6 @@
     background: #fff;
     border: 1px solid #e5e5e5;
     overflow: auto; }
-    #main-menu ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      font-size: 1rem; }
     #main-menu li {
       transition: all 0.3s; }
       #main-menu li a {
@@ -84,11 +82,6 @@
       opacity: 1; } }
 
 @media screen and (min-width: 1024px) {
-  #main-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-size: 1rem; }
   #main-menu ul {
     display: flex; }
   #main-menu li a {
@@ -120,6 +113,120 @@
       overflow: hidden;
       background: #fff;
       display: block; } }
+
+@media screen and (min-width: 450px) {
+  #page-menu ul {
+    display: flex; }
+  #page-menu li a {
+    display: block;
+    padding: 0.8em 1em; }
+  #page-menu li ul {
+    position: absolute;
+    transition: all 0.3s;
+    background: #fff;
+    display: block;
+    min-width: 200px;
+    transform-origin: top;
+    transform: scaleY(0);
+    border: 1px solid #e5e5e5;
+    border-top: none; }
+    #page-menu li ul.active {
+      transform: scaleY(1); }
+  #page-menu li ul li {
+    position: relative; }
+    #page-menu li ul li a {
+      border-top: 1px solid #e5e5e5; }
+    #page-menu li ul li ul:not(.active) {
+      max-height: 0 !important; }
+    #page-menu li ul li ul {
+      top: 0;
+      left: 100%;
+      position: absolute;
+      transition: all 0.3s;
+      overflow: hidden;
+      background: #fff;
+      display: block; } }
+
+@media screen and (min-width: 750px) {
+  .some-menu ul {
+    display: flex; }
+  .some-menu li a {
+    display: block;
+    padding: 0.8em 1em; }
+  .some-menu li ul {
+    position: absolute;
+    transition: all 0.3s;
+    background: #fff;
+    display: block;
+    min-width: 200px;
+    transform-origin: top;
+    transform: scaleY(0);
+    border: 1px solid #e5e5e5;
+    border-top: none; }
+    .some-menu li ul.active {
+      transform: scaleY(1); }
+  .some-menu li ul li {
+    position: relative; }
+    .some-menu li ul li a {
+      border-top: 1px solid #e5e5e5; }
+    .some-menu li ul li ul:not(.active) {
+      max-height: 0 !important; }
+    .some-menu li ul li ul {
+      top: 0;
+      left: 100%;
+      position: absolute;
+      transition: all 0.3s;
+      overflow: hidden;
+      background: #fff;
+      display: block; } }
+
+@media screen and (min-width: 0px) and (max-width: 450px) {
+  #page-menu ul li a {
+    display: block;
+    padding: 10px;
+    border-bottom: 2px solid #e5e5e5;
+    background: #f0f0f0; }
+  #page-menu ul li ul li a {
+    padding-left: 20px;
+    background: #fff;
+    border-bottom: 2px solid #eee; }
+  #page-menu ul ul:not(.active) li {
+    max-height: 0 !important;
+    overflow: hidden; }
+  #page-menu ul ul {
+    transition: all 0.3s;
+    transform: scaleY(0);
+    transform-origin: top; }
+    #page-menu ul ul.active {
+      transform: scaleY(1); }
+  #page-menu a:hover {
+    background: #0275d8;
+    color: #fff;
+    border-color: #025aa5; } }
+
+@media screen and (min-width: 0px) and (max-width: 750px) {
+  .some-menu ul li a {
+    display: block;
+    padding: 10px;
+    border-bottom: 2px solid #e5e5e5;
+    background: #f0f0f0; }
+  .some-menu ul li ul li a {
+    padding-left: 20px;
+    background: #fff;
+    border-bottom: 2px solid #eee; }
+  .some-menu ul ul:not(.active) li {
+    max-height: 0 !important;
+    overflow: hidden; }
+  .some-menu ul ul {
+    transition: all 0.3s;
+    transform: scaleY(0);
+    transform-origin: top; }
+    .some-menu ul ul.active {
+      transform: scaleY(1); }
+  .some-menu a:hover {
+    background: #0275d8;
+    color: #fff;
+    border-color: #025aa5; } }
 
 /*!
  * Bootstrap v4.0.0-alpha.6 (https://getbootstrap.com)
@@ -6110,13 +6217,6 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   .hidden-print {
     display: none !important; } }
 
-#main-menu {
-  z-index: 3001; }
-  #main-menu .sub-menu {
-    visibility: hidden; }
-  #main-menu .active {
-    visibility: visible; }
-
 body {
   background: #ddd; }
 
@@ -6128,42 +6228,10 @@ body {
 .scroll-disabled {
   overflow: hidden; }
 
-@media screen and (min-width: 750px) and (max-width: 1024px) {
-  main {
-    padding-right: 235px; } }
-
-main .container-fluid {
-  background: #f5f5f5;
-  padding-top: 5%;
-  padding-bottom: 5%; }
-
-footer#buttons {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: #ddd; }
-
 header {
   background: #fff; }
   header .container-fluid {
     display: flex; }
-
-@media screen and (max-width: 750px) {
-  main {
-    transition: all 0.3s; }
-  body.menu-open main {
-    filter: blur(7px); }
-  header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 3000; }
-  body {
-    padding-top: 70px; }
-  #main-menu {
-    top: 72px; } }
 
 header .menu-toggle-button {
   display: none;
@@ -6182,7 +6250,39 @@ header .menu-toggle-button {
   header .menu-toggle-button .active {
     content: "x"; }
 
-@media screen and (max-width: 750px) {
+@media screen and (min-width: 750px) and (max-width: 1024px) {
+  main {
+    padding-right: 235px; } }
+
+main .container-fluid {
+  background: #f5f5f5;
+  padding-top: 5%;
+  padding-bottom: 5%; }
+
+footer#buttons {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #ddd; }
+
+@media screen and (min-width: 0px) and (max-width: 750px) {
+  main {
+    transition: all 0.3s; }
+  body.menu-open main {
+    filter: blur(7px); }
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3000; }
+  body {
+    padding-top: 70px; }
+  #main-menu {
+    top: 72px; } }
+
+@media screen and (min-width: 0px) and (max-width: 750px) {
   header .menu-toggle-button {
     display: block; } }
 
