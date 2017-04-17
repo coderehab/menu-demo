@@ -12,10 +12,10 @@ var menu = new Menu({
   },
   events:{
     swipeLeft: function(){
-      this.close();
+      menu.close();
     },
     swipeRight: function(){
-      this.open();
+      menu.open();
     }
   }
 });
