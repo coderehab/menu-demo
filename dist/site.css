@@ -6394,7 +6394,7 @@ footer#buttons {
 @media screen and (min-width: 0px) and (max-width: 750px) {
   main {
     transition: all 0.3s; }
-  body.am-menu-active {
+  body {
     background: #014c8c; }
   body.am-menu-active main {
     opacity: 0.1; }
