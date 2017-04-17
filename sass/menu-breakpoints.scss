@@ -2,8 +2,11 @@
   main{
     transition: all 0.3s;
   }
-  body.menu-open main{
-    filter: blur(7px);
+  body.am-menu-active{
+    background: #014c8c;
+  }
+  body.am-menu-active main{
+    opacity: 0.1;
   }
   header{
     position: fixed;

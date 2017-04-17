@@ -5,6 +5,30 @@
     padding: 0;
     margin: 0;
     font-size: 1rem; }
+  #main-menu li a, #page-menu li a, .some-menu li a {
+    display: inline-block;
+    vertical-align: middle; }
+  #main-menu ul ul, #page-menu ul ul, .some-menu ul ul {
+    visibility: hidden; }
+    #main-menu ul ul.active, #page-menu ul ul.active, .some-menu ul ul.active {
+      visibility: visible; }
+  #main-menu .handle, #page-menu .handle, .some-menu .handle {
+    padding: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 25px;
+    cursor: pointer;
+    vertical-align: middle; }
+    #main-menu .handle:after, #page-menu .handle:after, .some-menu .handle:after {
+      content: "";
+      position: relative;
+      border: solid #555;
+      border-width: 0 2px 2px 0;
+      display: inline-block;
+      padding: 2px;
+      transform: rotate(45deg);
+      transition: all 0.3s; }
 
 @media screen and (min-width: 0px) and (max-width: 750px) {
   #main-menu {
@@ -17,12 +41,24 @@
     background: #fff;
     border: 1px solid #e5e5e5;
     overflow: auto; }
+    #main-menu li.active > .handle:after {
+      transform: rotate(45deg); }
     #main-menu li {
-      transition: all 0.3s; }
+      transition: all 0.3s;
+      position: relative; }
       #main-menu li a {
         display: block;
         padding: 0.8em 1em;
         border-bottom: 1px solid #e5e5e5; }
+      #main-menu li .handle {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 50px;
+        height: 50px; }
+        #main-menu li .handle:after {
+          transform: rotate(-45deg); }
       #main-menu li ul:not(.active) li {
         max-height: 0 !important;
         overflow: hidden; }
@@ -57,12 +93,24 @@
     background: #fff;
     border: 1px solid #e5e5e5;
     overflow: auto; }
+    #main-menu li.active > .handle:after {
+      transform: rotate(45deg); }
     #main-menu li {
-      transition: all 0.3s; }
+      transition: all 0.3s;
+      position: relative; }
       #main-menu li a {
         display: block;
         padding: 0.8em 1em;
         border-bottom: 1px solid #e5e5e5; }
+      #main-menu li .handle {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 50px;
+        height: 50px; }
+        #main-menu li .handle:after {
+          transform: rotate(-45deg); }
       #main-menu li ul:not(.active) li {
         max-height: 0 !important;
         overflow: hidden; }
@@ -81,12 +129,20 @@
       transform: translateX(0);
       opacity: 1; } }
 
+@media screen and (max-width: 750px) {
+  #main-menu {
+    transform: translateX(-100%);
+    opacity: 1; } }
+
 @media screen and (min-width: 1024px) {
   #main-menu ul {
     display: flex; }
+  #main-menu li {
+    transition: all 0.3s; }
   #main-menu li a {
-    display: block;
     padding: 0.8em 1em; }
+  #main-menu li .handle {
+    margin-left: -15px; }
   #main-menu li ul {
     position: absolute;
     transition: all 0.3s;
@@ -102,8 +158,17 @@
   #main-menu li ul li {
     position: relative; }
     #main-menu li ul li a {
-      border-top: 1px solid #e5e5e5; }
-    #main-menu li ul li ul:not(.active) {
+      border-top: 1px solid #e5e5e5;
+      width: 100%; }
+    #main-menu li ul li .handle {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 50px; }
+      #main-menu li ul li .handle:after {
+        transform: rotate(-45deg); }
+    #main-menu li ul li ul:not(.active) li {
       max-height: 0 !important; }
     #main-menu li ul li ul {
       top: 0;
@@ -117,9 +182,12 @@
 @media screen and (min-width: 450px) {
   #page-menu ul {
     display: flex; }
+  #page-menu li {
+    transition: all 0.3s; }
   #page-menu li a {
-    display: block;
     padding: 0.8em 1em; }
+  #page-menu li .handle {
+    margin-left: -15px; }
   #page-menu li ul {
     position: absolute;
     transition: all 0.3s;
@@ -135,8 +203,17 @@
   #page-menu li ul li {
     position: relative; }
     #page-menu li ul li a {
-      border-top: 1px solid #e5e5e5; }
-    #page-menu li ul li ul:not(.active) {
+      border-top: 1px solid #e5e5e5;
+      width: 100%; }
+    #page-menu li ul li .handle {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 50px; }
+      #page-menu li ul li .handle:after {
+        transform: rotate(-45deg); }
+    #page-menu li ul li ul:not(.active) li {
       max-height: 0 !important; }
     #page-menu li ul li ul {
       top: 0;
@@ -150,9 +227,12 @@
 @media screen and (min-width: 750px) {
   .some-menu ul {
     display: flex; }
+  .some-menu li {
+    transition: all 0.3s; }
   .some-menu li a {
-    display: block;
     padding: 0.8em 1em; }
+  .some-menu li .handle {
+    margin-left: -15px; }
   .some-menu li ul {
     position: absolute;
     transition: all 0.3s;
@@ -168,8 +248,17 @@
   .some-menu li ul li {
     position: relative; }
     .some-menu li ul li a {
-      border-top: 1px solid #e5e5e5; }
-    .some-menu li ul li ul:not(.active) {
+      border-top: 1px solid #e5e5e5;
+      width: 100%; }
+    .some-menu li ul li .handle {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 50px; }
+      .some-menu li ul li .handle:after {
+        transform: rotate(-45deg); }
+    .some-menu li ul li ul:not(.active) li {
       max-height: 0 !important; }
     .some-menu li ul li ul {
       top: 0;
@@ -181,52 +270,88 @@
       display: block; } }
 
 @media screen and (min-width: 0px) and (max-width: 450px) {
-  #page-menu ul li a {
-    display: block;
-    padding: 10px;
-    border-bottom: 2px solid #e5e5e5;
-    background: #f0f0f0; }
-  #page-menu ul li ul li a {
-    padding-left: 20px;
-    background: #fff;
-    border-bottom: 2px solid #eee; }
-  #page-menu ul ul:not(.active) li {
-    max-height: 0 !important;
-    overflow: hidden; }
-  #page-menu ul ul {
+  #page-menu li.active > .handle:after {
+    transform: rotate(45deg); }
+  #page-menu li {
     transition: all 0.3s;
-    transform: scaleY(0);
-    transform-origin: top; }
-    #page-menu ul ul.active {
-      transform: scaleY(1); }
-  #page-menu a:hover {
-    background: #0275d8;
-    color: #fff;
-    border-color: #025aa5; } }
+    position: relative;
+    background: #ddd; }
+    #page-menu li a {
+      display: block;
+      padding: 0.5em 1em;
+      border-bottom: 1px solid #e5e5e5; }
+    #page-menu li .handle {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 40px;
+      height: 40px; }
+      #page-menu li .handle:after {
+        transform: rotate(-45deg); }
+    #page-menu li ul:not(.active) li {
+      max-height: 0 !important;
+      overflow: hidden; }
+    #page-menu li ul {
+      transition: all 0.3s;
+      background: #f2f2f2;
+      transform: scaleY(0);
+      transform-origin: top; }
+      #page-menu li ul.active {
+        transform: scaleY(1); }
+  #page-menu li ul li {
+    background: #eee; }
+  #page-menu li ul li ul li {
+    background: #fff; }
+  #page-menu li ul li ul {
+    background: #eaeaea; }
+    #page-menu li ul li ul li a {
+      border-color: #ddd; }
+  .active#page-menu {
+    transform: translateX(0);
+    opacity: 1; } }
 
 @media screen and (min-width: 0px) and (max-width: 750px) {
-  .some-menu ul li a {
-    display: block;
-    padding: 10px;
-    border-bottom: 2px solid #e5e5e5;
-    background: #f0f0f0; }
-  .some-menu ul li ul li a {
-    padding-left: 20px;
-    background: #fff;
-    border-bottom: 2px solid #eee; }
-  .some-menu ul ul:not(.active) li {
-    max-height: 0 !important;
-    overflow: hidden; }
-  .some-menu ul ul {
+  .some-menu li.active > .handle:after {
+    transform: rotate(45deg); }
+  .some-menu li {
     transition: all 0.3s;
-    transform: scaleY(0);
-    transform-origin: top; }
-    .some-menu ul ul.active {
-      transform: scaleY(1); }
-  .some-menu a:hover {
-    background: #0275d8;
-    color: #fff;
-    border-color: #025aa5; } }
+    position: relative;
+    background: #ddd; }
+    .some-menu li a {
+      display: block;
+      padding: 0.5em 1em;
+      border-bottom: 1px solid #e5e5e5; }
+    .some-menu li .handle {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 40px;
+      height: 40px; }
+      .some-menu li .handle:after {
+        transform: rotate(-45deg); }
+    .some-menu li ul:not(.active) li {
+      max-height: 0 !important;
+      overflow: hidden; }
+    .some-menu li ul {
+      transition: all 0.3s;
+      background: #f2f2f2;
+      transform: scaleY(0);
+      transform-origin: top; }
+      .some-menu li ul.active {
+        transform: scaleY(1); }
+  .some-menu li ul li {
+    background: #eee; }
+  .some-menu li ul li ul li {
+    background: #fff; }
+  .some-menu li ul li ul {
+    background: #eaeaea; }
+    .some-menu li ul li ul li a {
+      border-color: #ddd; }
+  .active.some-menu {
+    transform: translateX(0);
+    opacity: 1; } }
 
 /*!
  * Bootstrap v4.0.0-alpha.6 (https://getbootstrap.com)
@@ -6269,8 +6394,10 @@ footer#buttons {
 @media screen and (min-width: 0px) and (max-width: 750px) {
   main {
     transition: all 0.3s; }
-  body.menu-open main {
-    filter: blur(7px); }
+  body.am-menu-active {
+    background: #014c8c; }
+  body.am-menu-active main {
+    opacity: 0.1; }
   header {
     position: fixed;
     top: 0;
