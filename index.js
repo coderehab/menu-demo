@@ -7,14 +7,14 @@ var menu = new Menu({
     toggle_button: ".menu-toggle-button",
   },
   options:{
-    disable_scroll: true,
-    use_handles:true,
+    disable_page_scroll: true,
+    parent_clickable:true,
   },
   events:{
-    swipeLeft: function(){
+    swipeLeft: function(menu, e){
       menu.close();
     },
-    swipeRight: function(){
+    swipeRight: function(menu, e){
       menu.open();
     }
   }

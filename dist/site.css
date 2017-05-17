@@ -8,10 +8,8 @@
   #main-menu li a, #page-menu li a, .some-menu li a {
     display: inline-block;
     vertical-align: middle; }
-  #main-menu ul ul, #page-menu ul ul, .some-menu ul ul {
-    visibility: hidden; }
-    #main-menu ul ul.active, #page-menu ul ul.active, .some-menu ul ul.active {
-      visibility: visible; }
+  #main-menu ul li:hover > ul, #page-menu ul li:hover > ul, .some-menu ul li:hover > ul, #main-menu ul li ul.active, #page-menu ul li ul.active, .some-menu ul li ul.active {
+    visibility: visible; }
   #main-menu .handle, #page-menu .handle, .some-menu .handle {
     padding: 10px;
     display: inline-flex;
@@ -153,8 +151,8 @@
     transform: scaleY(0);
     border: 1px solid #e5e5e5;
     border-top: none; }
-    #main-menu li ul.active {
-      transform: scaleY(1); }
+  #main-menu li:hover > ul, #main-menu li ul.active {
+    transform: scaleY(1); }
   #main-menu li ul li {
     position: relative; }
     #main-menu li ul li a {
@@ -168,8 +166,6 @@
       width: 50px; }
       #main-menu li ul li .handle:after {
         transform: rotate(-45deg); }
-    #main-menu li ul li ul:not(.active) li {
-      max-height: 0 !important; }
     #main-menu li ul li ul {
       top: 0;
       left: 100%;
@@ -198,8 +194,8 @@
     transform: scaleY(0);
     border: 1px solid #e5e5e5;
     border-top: none; }
-    #page-menu li ul.active {
-      transform: scaleY(1); }
+  #page-menu li:hover > ul, #page-menu li ul.active {
+    transform: scaleY(1); }
   #page-menu li ul li {
     position: relative; }
     #page-menu li ul li a {
@@ -213,8 +209,6 @@
       width: 50px; }
       #page-menu li ul li .handle:after {
         transform: rotate(-45deg); }
-    #page-menu li ul li ul:not(.active) li {
-      max-height: 0 !important; }
     #page-menu li ul li ul {
       top: 0;
       left: 100%;
@@ -243,8 +237,8 @@
     transform: scaleY(0);
     border: 1px solid #e5e5e5;
     border-top: none; }
-    .some-menu li ul.active {
-      transform: scaleY(1); }
+  .some-menu li:hover > ul, .some-menu li ul.active {
+    transform: scaleY(1); }
   .some-menu li ul li {
     position: relative; }
     .some-menu li ul li a {
@@ -258,8 +252,6 @@
       width: 50px; }
       .some-menu li ul li .handle:after {
         transform: rotate(-45deg); }
-    .some-menu li ul li ul:not(.active) li {
-      max-height: 0 !important; }
     .some-menu li ul li ul {
       top: 0;
       left: 100%;

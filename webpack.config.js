@@ -39,7 +39,7 @@ module.exports = {
       // ./public directory is being served
       open: 'external',
       host: 'localhost',
-      proxy: 'menustest.mod',
+      proxy: 'menutest.mod',
       files: ['resources/js/*.js', 'resources/images/**']
     }),
     new ExtractTextPlugin({ filename: 'site.css', disable: false, allChunks: true }),
